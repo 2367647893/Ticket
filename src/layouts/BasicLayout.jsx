@@ -7,30 +7,32 @@ import {
   UnorderedListOutline,
   UserOutline,
 } from 'antd-mobile-icons'
+import {history} from 'umi'
 import './styles.less'
 export default function BasicLayout (props) {
   const [activeKey, setActiveKey] = useState('todo')
+  const RouterTab = (val)=>{
+    console.log(val);
+    history.push(val)
+  }
   const tabs = [
     {
-      key: 'home',
+      key: '/',
       title: '首页',
       icon: <AppOutline />,
-      badge: Badge.dot,
     },
     {
-      key: 'todo',
-      title: '待办',
+      key: '/orderList',
+      title: '订单',
       icon: <UnorderedListOutline />,
-      badge: '5',
     },
     {
-      key: 'message',   
-      title: '消息',
+      key: '/register',   
+      title: '客服',
         icon: <MessageOutline />,
-      badge: '99+',
     },
     {
-      key: 'personalCenter',
+      key: '/user',
       title: '我的',
       icon: <UserOutline />,
     },
@@ -38,9 +40,9 @@ export default function BasicLayout (props) {
   return (
     <div styleName="BasBox">
        <div styleName="SecBox">{props.children}</div>
-        <TabBar>
+        <TabBar onChange={RouterTab}>
           {tabs.map(item => (
-            <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
+            <TabBar.Item key={item.key} icon={item.icon} title={item.title}  />
           ))}
         </TabBar>
      
