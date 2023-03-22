@@ -11,7 +11,7 @@ export default [
   // 配置路由
   {
     path: '/',
-    // component:'@/layouts/BasicLayout',//布局组件
+    component:'@/layouts/BasicLayout',//布局组件
     // wrappers:['@/'],//路由守卫
     routes: [
       { path: '/', component: './home', title: '主页' },

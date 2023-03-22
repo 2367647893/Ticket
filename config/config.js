@@ -2,14 +2,18 @@ import { defineConfig } from 'umi'
 import theme from '../src/theme/variables'
 import routes from './router.config'
 import env from './env'
-
+// const pxtorem = require('postcss-pxtorem')
 const path = require('path')
+
 
 export default defineConfig({
   ...env,
   hash: true,
   dynamicImport: {
     loading: '@/pages/loading',
+  },
+  antd:{
+    mobile:false
   },
   targets: {
     ie: 11,
