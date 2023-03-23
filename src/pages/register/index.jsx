@@ -12,13 +12,16 @@ function register(props) {
     const {dispatch}  = props
     const [form] = Form.useForm()
     // 确认注册
-    const YesRes = () => {
-        // console.log(form.getFieldsValue());
+    const YesRes = async() => {
         const val = form.getFieldsValue()
-        console.log(val);
-        // getRegister
-        dispatch({
+        // 注册
+       await dispatch({
             type:'reg/fetchReg',
+            payload:val,
+        })
+        // 登录
+        dispatch({
+            type:'reg/fetchLogin',
             payload:val,
         })
     }

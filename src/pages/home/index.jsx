@@ -7,9 +7,13 @@ export default connect((state)=>{
     }
 })(home)
 function home(props){
+
     return(
         <div styleName="HomeBox">
-            
+            <div styleName="HeadBox">11</div>
+            <div styleName="SectionBox">
+                11
+            </div>
         </div>
     )
 }

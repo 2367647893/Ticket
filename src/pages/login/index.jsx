@@ -10,8 +10,22 @@ export default connect((state) => {
 })(login)
 
 function login(props) {
+    const {dispatch}  = props
+    const [form] = Form.useForm()
+    // 跳转注册界面
     const JumpRes = () =>{
         history.push('/my/register')
+    }
+    // 确认登录
+    const YesLogin = async() => {
+        const val = form.getFieldsValue()
+       await   dispatch({
+        type:'login/fetchLogin',
+        payload:val,
+    })
+    localStorage.setItem("password",val.password)
+    
+      
     }
     return (
         <div styleName="LoginBox">
@@ -24,17 +38,17 @@ function login(props) {
             </div>
             <div styleName="SectionBox">
                 <div styleName="FormBox">
-                    <Form requiredMarkStyle='asterisk'>
-                        <Form.Item name='name' label='用户名' rules={[{ required: true }]}>
+                    <Form requiredMarkStyle='asterisk'  form={form}>
+                        <Form.Item name='username' label='用户名' rules={[{ required: true }]}>
                             <Input placeholder='请输入用户名' />
                         </Form.Item>
-                        <Form.Item name='name' label='密码' rules={[{ required: true }]}>
+                        <Form.Item name='password' label='密码' rules={[{ required: true }]}>
                             <Input placeholder='请输入密码' />
                         </Form.Item>
                     </Form>
                 </div>
                 <div styleName="BtnBox">
-                    <Button color='success' style={{borderRadius:'20px'}}>登录</Button>
+                    <Button color='success' style={{borderRadius:'20px'}} onClick={YesLogin}>登录</Button>
                     <Button color='success' style={{borderRadius:'20px'}} onClick={JumpRes}>注册</Button>
                 </div>
             </div>
