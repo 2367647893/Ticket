@@ -11,5 +11,8 @@ import api from './api';
 // export const categoryList = payload => 
 // request.get(api.categoryList, payload)
 
+// 注册
+export const getRegister = payload => request.post(api.register,payload)
 
-// 主页
+// 登录
+export const getLogin = payload => request.post(api.login,payload)

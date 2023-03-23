@@ -8,5 +8,9 @@ export default {
   // 
   categoryList: '/Home/Apis/sampleList',
 
-  
+  // 注册接口
+  register:'/api/auth/register',
+
+  // 登录接口
+  login:'/api/auth/login',
 }

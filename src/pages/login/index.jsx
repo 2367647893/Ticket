@@ -1,18 +1,26 @@
 import React from "react";
 import { Form, Input, Button } from 'antd-mobile'
 import { connect } from 'dva';
+import {history} from 'umi'
 import './styles.less'
 export default connect((state) => {
     return {
-
+        
     }
 })(login)
 
 function login(props) {
+    const JumpRes = () =>{
+        history.push('/my/register')
+    }
     return (
         <div styleName="LoginBox">
             <div styleName="HeadBox">
-                <span>ss</span><span>登录</span><span></span>
+                <span styleName="headLeft">
+                    {"<"}
+                </span>
+                <span styleName="headSection">登录</span>
+                <span styleName="headRight"></span>
             </div>
             <div styleName="SectionBox">
                 <div styleName="FormBox">
@@ -26,8 +34,8 @@ function login(props) {
                     </Form>
                 </div>
                 <div styleName="BtnBox">
-                    <Button>登录</Button>
-                    <Button>注册</Button>
+                    <Button color='success' style={{borderRadius:'20px'}}>登录</Button>
+                    <Button color='success' style={{borderRadius:'20px'}} onClick={JumpRes}>注册</Button>
                 </div>
             </div>
 

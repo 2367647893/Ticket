@@ -1,13 +1,11 @@
 export default [
-  // 配置路由
   {
-    path: '/',
+    path: '/my',
     routes: [
-      { path: '/login', component: './login', title: '登录' },
-      { path: '/register', component: './register', title: '注册' },
+      { path: '/my/login', component: './login', title: '登录' },
+      { path: '/my/register', component: './register', title: '注册' },
     ],
   },
-
   // 配置路由
   {
     path: '/',
@@ -22,4 +20,6 @@ export default [
       { path: '/orderList', component: './orderList', title: '订单' },
     ],
   },
+  //  // 配置路由
+ 
 ]

@@ -1,20 +1,28 @@
-import React,{useState}from 'react'
-import { Badge, TabBar } from 'antd-mobile'
+import React, { useState } from 'react'
+
+import { TabBar } from 'antd-mobile'
+
 import {
   AppOutline,
   MessageOutline,
-  MessageFill,
   UnorderedListOutline,
-  UserOutline,
+  UserOutline
 } from 'antd-mobile-icons'
-import {history} from 'umi'
+
+import { history } from 'umi'
+
 import './styles.less'
-export default function BasicLayout (props) {
+
+export default function BasicLayout(props) {
+
   const [activeKey, setActiveKey] = useState('todo')
-  const RouterTab = (val)=>{
-    console.log(val);
+  const [mac, setMac] = useState('')
+
+  const RouterTab = (val) => {
+    setMac(val)
     history.push(val)
   }
+
   const tabs = [
     {
       key: '/',
@@ -27,9 +35,9 @@ export default function BasicLayout (props) {
       icon: <UnorderedListOutline />,
     },
     {
-      key: '/register',   
+      key: '/servicess',
       title: '客服',
-        icon: <MessageOutline />,
+      icon: <MessageOutline />,
     },
     {
       key: '/user',
@@ -39,13 +47,12 @@ export default function BasicLayout (props) {
   ]
   return (
     <div styleName="BasBox">
-       <div styleName="SecBox">{props.children}</div>
-        <TabBar onChange={RouterTab}>
-          {tabs.map(item => (
-            <TabBar.Item key={item.key} icon={item.icon} title={item.title}  />
-          ))}
-        </TabBar>
-     
+      <div styleName="SecBox">{props.children}</div>
+      <TabBar onChange={RouterTab}>
+        {tabs.map(item => (
+          <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
+        ))}
+      </TabBar>
     </div>
   )
 }
