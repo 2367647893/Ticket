@@ -15,19 +15,13 @@ export default{
     },
     effects:{
         // 注册
-        *fetchReg({payload},{call,put,select}){
+        *fetchReg({payload},{call, put, select}){
             const res = yield call(api.getRegister,payload)
-            console.log(res);
         },
         // 登录
-        *fetchLogin({payload},{call,put,select}){
+        *fetchLogin({payload},{call, put, select}){
             const res = yield call(api.getLogin,payload)
-            console.log(res);
             if (res.data.code === 200) {
-                // yield put({
-                //     type: 'setUserInfo',
-                //     payload: res.data
-                // })
                 // 存储token
                 localStorage.setItem('ticketToken', res.data.token)
                 // 存储登录数据
@@ -38,7 +32,7 @@ export default{
                 Toast.show({
                     icon: 'success',
                     content: '注册成功',
-                  })
+                })
             }
         }
     }

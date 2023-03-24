@@ -1,4 +1,4 @@
-import React,{useForm}from "react";
+import React,{useEffect, useForm}from "react";
 import { Form, Input, Button } from 'antd-mobile'
 import { connect } from 'dva';
 import { history } from 'umi'

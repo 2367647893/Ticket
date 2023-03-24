@@ -1,14 +1,14 @@
 import React from "react";
-import {connect} from 'dva';
+import { connect } from 'dva';
 import './styles.less'
-export default connect((state)=>{
-    return{
+export default connect((state) => {
+    return {
 
     }
 })(home)
-function home(props){
+function home(props) {
 
-    return(
+    return (
         <div styleName="HomeBox">
             <div styleName="HeadBox">11</div>
             <div styleName="SectionBox">

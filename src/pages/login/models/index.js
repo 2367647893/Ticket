@@ -1,13 +1,13 @@
 import api from '@/services';
 import { history } from 'umi';
-import {Toast} from 'antd-mobile'
+import { Toast } from 'antd-mobile'
 
 export default {
     namespace: 'login',
     state: {
         ticketToken: "",
         userInfo: {},
-        
+
     },
     reducers: {
         setUserInfo(state, { payload }) {
@@ -37,9 +37,9 @@ export default {
                 Toast.show({
                     icon: 'success',
                     content: '登录成功',
-                  })
+                })
             }
-            
+
         }
     }
 }
