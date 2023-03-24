@@ -14,6 +14,7 @@ function home(props) {
             <div styleName="SectionBox">
                 11
             </div>
+            <div styleName="img_swiper"></div>
         </div>
     )
 }

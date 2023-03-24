@@ -52,7 +52,7 @@ function register(props) {
                 </div>
                 {/* 注册按钮 */}
                 <div styleName="BtnBox">
-                    <Button color='success' style={{ borderRadius: '20px' }} onClick={YesRes}>注册</Button>
+                    <Button styleName="button_btn"  onClick={YesRes}>注册</Button>
                 </div>
             </div>
 
