@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from 'dva';
+import ImageSwiper from "./components/ImageSwiper";
 import './styles.less'
 export default connect((state) => {
     return {
@@ -14,7 +15,9 @@ function home(props) {
             <div styleName="SectionBox">
                 11
             </div>
-            <div styleName="img_swiper"></div>
+            <div styleName="img_swiper">
+                <ImageSwiper/>
+            </div>
         </div>
     )
 }
