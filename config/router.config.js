@@ -1,9 +1,14 @@
 export default [
   {
-    path: '/my',
+    path: '/login',
     routes: [
-      { path: '/my/login', component: './login', title: '登录' },
-      { path: '/my/register', component: './register', title: '注册' },
+      { path: '/login', component: './login', title: '登录' },
+    ],
+  },
+  {
+    path: '/register',
+    routes: [
+      { path: '/register', component: './register', title: '注册' },
     ],
   },
   // 配置路由
@@ -14,12 +19,8 @@ export default [
     routes: [
       { path: '/', component: './home', title: '首页' },
       { path: '/user', component: './user', title: '我的' },
-      // { path: '/login', component: './login', title: '登录' },
-      // { path: '/register', component: './register', title: '注册' },
       { path: '/services', component: './servicess', title: '客服' },
       { path: '/orderList', component: './orderList', title: '订单' },
     ],
   },
-  //  // 配置路由
- 
 ]
