@@ -1,13 +1,21 @@
 .content {
-    height: 120px;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 48px;
-    user-select: none;
-  }
-.img_box{
-    width: 100%;
-    height: auto;
+  height: 120px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  user-select: none;
+}
+
+:global(.adm-swiper-horizontal .adm-swiper-indicator) {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.img_box {
+  width: 100%;
+  height: auto;
 }

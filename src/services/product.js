@@ -16,3 +16,6 @@ export const getRegister = payload => request.post(api.register,payload)
 
 // 登录
 export const getLogin = payload => request.post(api.login,payload)
+
+// 主页出行快讯数据
+export const getTravelList = payload => request.get(api.travelList,payload)

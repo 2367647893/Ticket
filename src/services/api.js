@@ -13,4 +13,7 @@ export default {
 
   // 登录接口
   login:'/api/auth/login',
+
+  // 主页出行快讯数据
+  travelList:'/api/rest/travelList',
 }

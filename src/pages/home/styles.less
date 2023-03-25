@@ -12,6 +12,22 @@
         background-color: #1ba9ba;
         border-radius: 0px 0px 100px 100px;
         position: relative;
+        display: flex;
+        justify-content: center;
+
+        .head_title {
+            width: 85%;
+            height: 100px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            color: #fff;
+
+            h1 {
+                color: #fff;
+            }
+        }
     }
 
     .SectionBox {
@@ -31,5 +47,28 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .dummy_box{
+        width: 96%;
+        height: 27%;
+        display: flex;
+        flex-direction: column;
+        background-color: sandybrown;
+        margin-top: 10px;
+        border-radius:  10px 10px 0px 0px;
+        align-items: center;
+        .dummy_head{
+            width: 90%;
+            height: 50px;
+            background-color: royalblue;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .dummy_section{
+            flex: 1;
+            background-color: aqua;
+        }
     }
 }
