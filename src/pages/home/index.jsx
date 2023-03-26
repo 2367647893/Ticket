@@ -1,20 +1,21 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { connect } from 'dva';
 import ImageSwiper from "./components/ImageSwiper";
+import {Image} from 'antd'
 import './styles.less'
 export default connect((state) => {
     return {
-        homeList:state.home.travelList
+        homeList: state.home.travelList
     }
 })(home)
 function home(props) {
-    const {dispatch,homeList} = props
+    const { dispatch, homeList } = props
     console.log(homeList);
-    useEffect(()=>{
+    useEffect(() => {
         dispatch({
-            type:"home/feactList",
+            type: "home/feactList",
         })
-    },[])
+    }, [])
     return (
         <div styleName="HomeBox">
             <div styleName="HeadBox">
@@ -30,13 +31,32 @@ function home(props) {
                 <ImageSwiper />
             </div>
             <div styleName="dummy_box">
-               <div styleName="dummy_head">
+                <div styleName="dummy_head">
                     <span>出行快讯</span>
                     <span>更多》</span>
-               </div>
-               <div styleName="dummy_section">
-                    
-               </div>
+                </div>
+                <div styleName="dummy_section">
+                    {
+                        homeList.slice(0,3).map((item, index) => {
+                            console.log(item);
+                            return (
+                                <div key={item.index} styleName="dl_box">
+                                    <div styleName="dl_lef">{item.index}</div>
+                                    <div styleName="dl_cen">
+                                        <div styleName="dl_tit">{item.title}</div>
+                                        <div styleName="dl_span">
+                                            <span>{item.from}</span>
+                                            <span>{item.date}</span>
+                                        </div>
+                                    </div>
+                                    <div styleName="dl_rig">
+                                        <Image src={item.imgSrc} style={{width:50,height:50}} />
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
 
             </div>
         </div>
