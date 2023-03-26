@@ -1,4 +1,4 @@
-import React,{useEffect, useForm}from "react";
+import React, { useEffect, useForm } from "react";
 import { Form, Input, Button } from 'antd-mobile'
 import { connect } from 'dva';
 import { history } from 'umi'
@@ -9,20 +9,20 @@ export default connect((state) => {
     }
 })(register)
 function register(props) {
-    const {dispatch}  = props
+    const { dispatch } = props
     const [form] = Form.useForm()
     // 确认注册
-    const YesRes = async() => {
+    const YesRes = async () => {
         const val = form.getFieldsValue()
         // 注册
-       await dispatch({
-            type:'reg/fetchReg',
-            payload:val,
+        await dispatch({
+            type: 'reg/fetchReg',
+            payload: val,
         })
         // 登录
         dispatch({
-            type:'reg/fetchLogin',
-            payload:val,
+            type: 'reg/fetchLogin',
+            payload: val,
         })
     }
     return (
@@ -52,7 +52,7 @@ function register(props) {
                 </div>
                 {/* 注册按钮 */}
                 <div styleName="BtnBox">
-                    <Button styleName="button_btn"  onClick={YesRes}>注册</Button>
+                    <Button styleName="button_btn" onClick={YesRes}>注册</Button>
                 </div>
             </div>
 

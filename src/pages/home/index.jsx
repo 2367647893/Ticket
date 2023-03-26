@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from 'dva';
 import ImageSwiper from "./components/ImageSwiper";
-import {Image} from 'antd'
+import { Image } from 'antd'
 import './styles.less'
 export default connect((state) => {
     return {
@@ -37,7 +37,7 @@ function home(props) {
                 </div>
                 <div styleName="dummy_section">
                     {
-                        homeList.slice(0,3).map((item, index) => {
+                        homeList.slice(0, 3).map((item, index) => {
                             console.log(item);
                             return (
                                 <div key={item.index} styleName="dl_box">
@@ -50,7 +50,7 @@ function home(props) {
                                         </div>
                                     </div>
                                     <div styleName="dl_rig">
-                                        <Image src={item.imgSrc} style={{width:50,height:50}} />
+                                        <Image src={item.imgSrc} style={{ width: 100, height: 75 }} />
                                     </div>
                                 </div>
                             )

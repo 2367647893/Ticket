@@ -5,7 +5,7 @@ import { Toast } from 'antd-mobile'
 export default {
     namespace: 'home',
     state: {
-        travelList:[]
+        travelList: []
 
     },
     reducers: {

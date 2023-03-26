@@ -5,9 +5,9 @@ export default connect((state) => {
     return {
 
     }
-})(orderList)
-function orderList(props) {
+})(info)
+function info(props) {
     return (
-        <div>orderList</div>
+        <div>info</div>
     )
 }
