@@ -12,8 +12,8 @@ export default defineConfig({
   dynamicImport: {
     loading: '@/pages/loading',
   },
-  antd:{
-    mobile:false
+  antd: {
+    mobile: false
   },
   targets: {
     ie: 11,
@@ -25,7 +25,7 @@ export default defineConfig({
     '@': path.resolve(__dirname, '../src'),
     '@@@': path.resolve(__dirname, '../src/components'),
     '@assets': path.resolve(__dirname, '../src/assets/images'),
-    '@less':path.resolve(__dirname, '../src/theme/mixins.less')
+    '@less': path.resolve(__dirname, '../src/theme/mixins.less')
   },
   routes,
   theme,

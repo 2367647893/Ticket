@@ -25,7 +25,12 @@ function home(props) {
                 </div>
             </div>
             <div styleName="SectionBox">
-                11
+                <div styleName="sec_box">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
             <div styleName="img_swiper">
                 <ImageSwiper />

@@ -1,0 +1,70 @@
+.info_box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .info_head {
+        width: 100%;
+        height: 50px;
+        background-color: #1ba9ba;
+    }
+
+    .info_section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .dl_box {
+            width: 100%;
+            height: 15.5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            // margin-top: 10px;
+
+            .dl_lef {
+                width: 10%;
+                height: 100%;
+                display: flex;
+                font-size: 18px;
+                font-weight: bold;
+                color: red;
+            }
+
+            .dl_cen {
+                width: 60%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .dl_tit {
+                    width: 100%;
+                    height: 50%;
+                    display: -webkit-box;
+                    overflow: hidden;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    font-size: 15px;
+                }
+
+                .dl_span {
+                    width: 100%;
+                    height: 20%;
+                    display: flex;
+                    align-items: center;
+                    color: #ccc;
+                }
+            }
+
+            .dl_rig {
+                width: 30%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
