@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from 'dva';
 import ImageSwiper from "./components/ImageSwiper";
-import { Image } from 'antd'
+import { Image,Button} from 'antd'
 import './styles.less'
 export default connect((state) => {
     return {
@@ -26,10 +26,14 @@ function home(props) {
             </div>
             <div styleName="SectionBox">
                 <div styleName="sec_box">
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>4</div>
+                    <div styleName="city_box">
+                        <div styleName="lef_city">1</div>
+                        <div styleName="icon_city">icon</div>
+                        <div styleName="rig_city">1</div>
+                    </div>
+                    <div styleName="time_box">时间</div>
+                    <div styleName="switch_box">只看高铁动车</div>
+                    <div styleName="button_box"><Button>搜索</Button></div>
                 </div>
             </div>
             <div styleName="img_swiper">
