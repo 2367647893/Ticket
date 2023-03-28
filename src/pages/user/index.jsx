@@ -7,7 +7,10 @@ export default connect((state)=>{
     }
 })(user)
 function user(props){
+   
     return(
-        <div>user</div>
+        <div>
+            user
+        </div>
     )
 }
