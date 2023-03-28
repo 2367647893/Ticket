@@ -1,3 +1,4 @@
+// 主页最外层
 .HomeBox {
     width: 100%;
     height: 100%;
@@ -7,6 +8,7 @@
     align-items: center;
     overflow: auto;
 
+    // 头部
     .HeadBox {
         width: 100%;
         height: 40%;
@@ -16,6 +18,7 @@
         display: flex;
         justify-content: center;
 
+        // 头部标签
         .head_title {
             width: 85%;
             height: 100px;
@@ -24,12 +27,14 @@
             flex-direction: column;
             justify-content: space-around;
             color: #fff;
+
             h1 {
                 color: #fff;
             }
         }
     }
 
+    // 主体
     .SectionBox {
         width: 96%;
         height: 35%;
@@ -42,65 +47,89 @@
         padding: 20px;
         border-radius: 10px;
 
+        // 时间和城市选择
         .sec_box {
             width: 100vw;
             height: 96%;
-            background-color: red;
             display: flex;
             align-items: center;
             justify-content: space-around;
             flex-direction: column;
 
-            .city_box{
+            // 城市切换
+            .city_box {
                 width: 100%;
                 height: 23%;
                 display: flex;
                 align-items: center;
                 background-color: #1ba9ba;
                 justify-content: space-between;
-                .lef_city{
+
+                .lef_city {
                     width: 40%;
-                    height:100%;
+                    height: 100%;
                     border-bottom: 1px solid #ccc;
                 }
-                .icon_city{
+
+                .icon_city {
                     width: 20%;
-                    height:100%;
+                    height: 100%;
                     border-bottom: 1px solid #ccc;
                 }
-                .rig_city{
+
+                .rig_city {
                     width: 40%;
-                    height:100%;
+                    height: 100%;
                     border-bottom: 1px solid #ccc;
                 }
             }
-            .time_box{
+
+            // 时间
+            .time_box {
                 width: 100%;
                 height: 23%;
                 display: flex;
                 align-items: center;
-                background-color: #1ba9ba;
+                // background-color: #1ba9ba;
                 justify-content: space-between;
+                border-bottom: 1px solid #eaeaea;
             }
-            .switch_box{
+
+            // 切换
+            .switch_box {
                 width: 100%;
                 height: 23%;
                 display: flex;
                 align-items: center;
-                background-color: #1ba9ba;
                 justify-content: space-between;
+
+                span {
+                    color: #888;
+                    font-size: 3.623188vw;
+                }
             }
-            .button_box{
+
+            // 按钮
+            .button_box {
                 width: 100%;
                 height: 23%;
                 display: flex;
                 align-items: center;
-                background-color: #1ba9ba;
-                justify-content: space-between;
+                justify-content: center;
+
+                .btn_sea {
+                    width: 100%;
+                    height: 80%;
+                    background-color: #f90;
+                    color: #fff;
+                    border: none;
+                    font-size: 3.864734vw;
+                }
             }
         }
     }
 
+    // 轮播图
     .img_swiper {
         width: 96%;
         height: 13%;
@@ -110,6 +139,7 @@
         justify-content: center;
     }
 
+    // 出行快讯
     .dummy_box {
         width: 96%;
         height: 27%;
@@ -121,6 +151,7 @@
         align-items: center;
         overflow: hidden;
 
+        // 快讯头部
         .dummy_head {
             width: 90%;
             height: 50px;
@@ -129,6 +160,7 @@
             justify-content: space-between;
         }
 
+        // 快讯主体
         .dummy_section {
             flex: 1;
             overflow: auto;
@@ -184,4 +216,13 @@
             }
         }
     }
+}
+
+// 时间框弹出位置
+:global(.adm-popup-body-position-bottom) {
+    position: fixed;
+    bottom: 49px;
+    left: 0;
+    z-index: 10;
+    overflow: hidden;
 }
