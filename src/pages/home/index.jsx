@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from 'dva';
 import ImageSwiper from "./components/ImageSwiper";
 import { Image, Button, Switch, Popup, Calendar } from 'antd-mobile'
-import {history} from 'umi'
+import { history } from 'umi'
 import './styles.less'
 export default connect((state) => {
     return {
@@ -13,8 +13,8 @@ function home(props) {
     const { dispatch, homeList } = props
     const [visible1, setVisible1] = useState(false)
     const [times, setTimes] = useState(getTimer(new Date()))
-    const [leftCity,setLeftCity] = useState('天津')
-    const [rightCity,setRightCity] = useState('北京')
+    const [leftCity, setLeftCity] = useState('天津')
+    const [rightCity, setRightCity] = useState('北京')
     //获取当前年月日星期几几点几分几秒并打印
     function getTimer(v) {
         var date = v
@@ -49,7 +49,20 @@ function home(props) {
         setTimes(getTimer(v))
     })
     // 搜索车票
-    const SeachBtn=()=>{
+    const SeachBtn = () => {
+        localStorage.setItem('ticket_tit',
+            JSON.stringify(
+                {
+                    date: new Date().getTime(),
+                    form: leftCity,
+                    haveTicket: false,
+                    highSpeed: false,
+                    timeSort: 0,
+                    to: rightCity,
+                }
+            )
+        )
+
         history.push('/query')
     }
     return (

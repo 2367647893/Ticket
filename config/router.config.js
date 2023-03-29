@@ -24,6 +24,14 @@ export default [
     ],
   },
 
+  // 车票页
+  {
+    path: '/query',
+    routes: [
+      { path: '/query', component: './query', title: '车票' },
+    ],
+  },
+
   // 底部切换路由
   {
     path: '/',
