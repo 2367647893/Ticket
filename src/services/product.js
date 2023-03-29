@@ -19,3 +19,6 @@ export const getLogin = payload => request.post(api.login, payload)
 
 // 主页出行快讯数据
 export const getTravelList = payload => request.get(api.travelList, payload)
+
+// 车票数据
+export const getQueryList = payload => request.post(api.queryList, payload)

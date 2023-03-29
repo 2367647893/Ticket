@@ -25,6 +25,17 @@ export default {
                     payload: res.data
                 })
             }
-        }
+        },
+        // 车票数据
+        *feactTicket({ payload }, { call, put, select }) {
+            const res = yield call(api.getQueryList, payload)
+            console.log(res);
+            // if (res.code === 0) {
+            //     yield put({
+            //         type: 'setTravelList',
+            //         payload: res.data
+            //     })
+            // }
+        },
     }
 }

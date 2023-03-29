@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from 'dva';
 import ImageSwiper from "./components/ImageSwiper";
 import { Image, Button, Switch, Popup, Calendar } from 'antd-mobile'
+import {history} from 'umi'
 import './styles.less'
 export default connect((state) => {
     return {
@@ -11,32 +12,46 @@ export default connect((state) => {
 function home(props) {
     const { dispatch, homeList } = props
     const [visible1, setVisible1] = useState(false)
+    const [times, setTimes] = useState(getTimer(new Date()))
+    const [leftCity,setLeftCity] = useState('天津')
+    const [rightCity,setRightCity] = useState('北京')
     //获取当前年月日星期几几点几分几秒并打印
-    function getTimer() {
-        var date = new Date()
+    function getTimer(v) {
+        var date = v
         var week = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
         var year = date.getFullYear()
         var month = date.getMonth() + 1
         var datee = date.getDate()
         var day = date.getDay()
-        var time = year + '-' + month + '-' + datee 
-        return time 
+        var time = year + '-' + month + '-' + datee + '(' + week[day] + ')'
+        return time
     }
-    const defaultSingle = new Date(new Date())
     // 默认获取出行快讯数据
     useEffect(() => {
-        console.log(defaultSingle);
-        console.log(getTimer(defaultSingle));
         dispatch({
             type: "home/feactList",
         })
     }, [])
     // 切换日期弹出层
-    const click_Time = (() => {
+    const click_Time = ((v) => {
+        // 设置弹框状态
         setVisible1((v) => {
             setVisible1(!v)
         })
     })
+    // 选择日期
+    const timeCha = ((v) => {
+        // 设置弹框状态
+        setVisible1((v) => {
+            setVisible1(!v)
+        })
+        // 切换日期
+        setTimes(getTimer(v))
+    })
+    // 搜索车票
+    const SeachBtn=()=>{
+        history.push('/query')
+    }
     return (
         <div styleName="HomeBox">
             <div styleName="HeadBox">
@@ -50,18 +65,24 @@ function home(props) {
                 {/* 城市选择  时间选择 */}
                 <div styleName="sec_box">
                     <div styleName="city_box">
-                        <div styleName="lef_city"></div>
+                        <div styleName="lef_city">
+                            {leftCity}
+                        </div>
                         <div styleName="icon_city">icon</div>
-                        <div styleName="rig_city">1</div>
+                        <div styleName="rig_city">
+                            {rightCity}
+                        </div>
                     </div>
                     <div styleName="time_box" onClick={click_Time}>
-
+                        {times}
                     </div>
                     <div styleName="switch_box">
                         <span>只看高铁/动车</span>
                         <Switch />
                     </div>
-                    <div styleName="button_box"><Button styleName="btn_sea">搜索</Button></div>
+                    <div styleName="button_box">
+                        <Button styleName="btn_sea" onClick={SeachBtn}>搜索</Button>
+                    </div>
                 </div>
             </div>
             {/* 轮播图 */}
@@ -96,6 +117,7 @@ function home(props) {
                                             src={item.imgSrc}
                                             style={{ width: 100, height: 75 }}
                                         />
+                                        {/* 时间框 */}
                                         <Popup
                                             mask={false}
                                             visible={visible1}
@@ -105,9 +127,9 @@ function home(props) {
                                                 prevMonthButton={<span>上一月</span>}
                                                 nextMonthButton={<span>下一月</span>}
                                                 selectionMode='single'
-                                                defaultValue={defaultSingle}
+                                                defaultValue={times}
                                                 onChange={val => {
-                                                    console.log(val)
+                                                    timeCha(val)
                                                 }}
                                             />
                                         </Popup>

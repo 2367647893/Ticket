@@ -16,4 +16,7 @@ export default {
 
   // 主页出行快讯数据
   travelList: '/api/rest/travelList',
+
+  // 车票数据 
+  queryList: '/api/rest/query',
 }
