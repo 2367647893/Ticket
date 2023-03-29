@@ -29,7 +29,11 @@ function query(props) {
         <div styleName="query_box">
             <div styleName="query_head">
                 <div styleName="head_top"><div></div><span>{form}-{to}</span></div>
-                <div styleName="head_bom">1</div>
+                <div styleName="head_bom">
+                    <div>前一天</div>
+                    <div>11</div>
+                    <div>后一天</div>
+                </div>
             </div>
             <div styleName="query_section">
                 {
@@ -58,7 +62,20 @@ function query(props) {
                     })
                 }
             </div>
-            <div styleName="query_footer">1</div>
+            <div styleName="query_footer">
+                <dl>
+                    <dt>1</dt>
+                    <dd>出发</dd>
+                </dl>
+                <dl>
+                    <dt>1</dt>
+                    <dd>只看高铁动车</dd>
+                </dl>
+                <dl>
+                    <dt>1</dt>
+                    <dd>只看有票</dd>
+                </dl>
+            </div>
         </div>
     )
 }
