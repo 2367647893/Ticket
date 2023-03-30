@@ -1,12 +1,13 @@
-import React,{useEffect} from "react";
+import React from "react";
 import { Form, Input, Button } from 'antd-mobile'
 import { connect } from 'dva';
 import { history } from 'umi'
 import DynamicBackground from '@/components/DynamicBackground'
 import './styles.less'
 export default connect((state) => {
+    console.log(state);
     return {
-
+        
     }
 })(login)
 

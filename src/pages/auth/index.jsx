@@ -3,7 +3,9 @@ import { Redirect } from 'umi'
 import { connect } from 'dva'
 
 export default connect(()=>{
-
+    return{
+        
+    }
 })(Auth)
 
 function Auth(props){

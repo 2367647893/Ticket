@@ -3,6 +3,7 @@ import { connect } from 'dva';
 import ImageSwiper from "./components/ImageSwiper";
 import { Image, Button, Switch, Popup, Calendar } from 'antd-mobile'
 import { history } from 'umi'
+import Icons from '@/components/Icons'
 import './styles.less'
 export default connect((state) => {
     return {
@@ -81,7 +82,10 @@ function home(props) {
                         <div styleName="lef_city">
                             {leftCity}
                         </div>
-                        <div styleName="icon_city">icon</div>
+                        <div styleName="icon_city">
+                            {/* icon图标 */}
+                            <Icons name={'icon-qiehuan'} />
+                        </div>
                         <div styleName="rig_city">
                             {rightCity}
                         </div>
@@ -94,7 +98,9 @@ function home(props) {
                         <Switch />
                     </div>
                     <div styleName="button_box">
-                        <Button styleName="btn_sea" onClick={SeachBtn}>搜索</Button>
+                        <Button styleName="btn_sea" onClick={SeachBtn}>
+                            搜索
+                        </Button>
                     </div>
                 </div>
             </div>
@@ -106,7 +112,11 @@ function home(props) {
             <div styleName="dummy_box">
                 <div styleName="dummy_head">
                     <span>出行快讯</span>
-                    <span>更多》</span>
+                    <span styleName="backIcon">
+                        更多
+                        {/* icon图标 */}
+                        <Icons name={'icon-xiangyou'} />
+                    </span>
                 </div>
                 <div styleName="dummy_section">
                     {
