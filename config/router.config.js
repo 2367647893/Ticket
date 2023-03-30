@@ -36,7 +36,7 @@ export default [
   {
     path: '/',
     component: '@/layouts/BasicLayout',//布局组件
-    // wrappers:['@/'],//路由守卫
+    wrappers:['./auth'],//路由守卫
     routes: [
       { path: '/', component: './home', title: '首页' },
       { path: '/user', component: './user', title: '我的' },

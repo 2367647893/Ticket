@@ -1,7 +1,8 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Form, Input, Button } from 'antd-mobile'
 import { connect } from 'dva';
 import { history } from 'umi'
+import DynamicBackground from '@/components/DynamicBackground'
 import './styles.less'
 export default connect((state) => {
     return {
@@ -26,8 +27,11 @@ function login(props) {
         localStorage.setItem("password", val.password)
 
     }
+   
     return (
-        <div styleName="LoginBox">
+        <div styleName="login_div">
+            <div styleName="LoginBox">
+            
             <div styleName="HeadBox">
                 <span styleName="headLeft">
                     {"<"}
@@ -63,7 +67,9 @@ function login(props) {
                     </Button>
                 </div>
             </div>
-
+        </div>
+        {/* 画布背景 */}
+        <DynamicBackground/>
         </div>
     )
 }

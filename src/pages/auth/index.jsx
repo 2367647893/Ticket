@@ -7,9 +7,9 @@ export default connect(()=>{
 })(Auth)
 
 function Auth(props){
-    if (localStorage.getItem('id')) {
+    if (localStorage.getItem('ticketToken')) {
         return props.children
     }else{
-        return <Redirect to='/user/login' />
+        return <Redirect to='/login' />
     }
 }

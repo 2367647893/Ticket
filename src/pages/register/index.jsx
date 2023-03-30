@@ -55,7 +55,6 @@ function register(props) {
                     <Button styleName="button_btn" onClick={YesRes}>注册</Button>
                 </div>
             </div>
-
         </div>
     )
 }
