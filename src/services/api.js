@@ -19,4 +19,7 @@ export default {
 
   // 车票数据 
   queryList: '/api/rest/query',
+
+  // 车票详情
+  ticketList: '/api/rest/ticket',
 }

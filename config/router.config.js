@@ -1,5 +1,5 @@
 export default [
-  
+
   // 注册路由
   {
     path: '/register',
@@ -32,11 +32,18 @@ export default [
     ],
   },
 
+  // 车票页
+  {
+    path: '/ticket',
+    routes: [
+      { path: '/ticket', component: './ticket', title: '车票详情' },
+    ],
+  },
   // 底部切换路由
   {
     path: '/',
     component: '@/layouts/BasicLayout',//布局组件
-    wrappers:['./auth'],//路由守卫
+    wrappers: ['./auth'],//路由守卫
     routes: [
       { path: '/', component: './home', title: '首页' },
       { path: '/user', component: './user', title: '我的' },

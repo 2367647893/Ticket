@@ -64,7 +64,7 @@ function Footer(props) {
 
         // 筛选数据(高铁)
         setHighSpeed((v) => {
-            v=!v
+            v = !v
             dispatch({
                 type: "query/feactTicket",
                 // 解构tick赋值时间
@@ -89,7 +89,7 @@ function Footer(props) {
 
         // 筛选数据(有票)
         setHaveTicket((v) => {
-            v=!v
+            v = !v
             dispatch({
                 type: "query/feactTicket",
                 // 解构tick赋值时间
@@ -101,12 +101,9 @@ function Footer(props) {
                 },
             })
             return v
-        
+
         })
-        console.log(tick);
     }
-    // highSpeed：false  高铁
-    // haveTicket：false 有票
     return (
         <div styleName="foot_bom">
             <dl onClick={embark} styleName="text_class">

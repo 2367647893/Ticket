@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from 'dva';
+import { history } from 'umi'
 import Icons from '@/components/Icons';
 import Nav from '@/components/Nav';
 import Footer from './components/Footer'
@@ -25,6 +26,14 @@ function query(props) {
         })
     }, [])
 
+    // 点击跳转到车票详情
+    const JumpTicket = ((item) => {
+        history.push('/ticket')
+        dispatch({
+            type: "ticket/feactJumpTicketDetail",
+            payload: item
+        })
+    })
     return (
         <div styleName="query_box">
             <div styleName="query_head">
@@ -34,7 +43,7 @@ function query(props) {
                         <Icons name={'icon-xiangzuo_o'} />
                     </div>
                     <div styleName="head_tit">
-                    <span>{form}-{to}</span>
+                        <span>{form}-{to}</span>
                     </div>
                 </div>
                 <div styleName="head_bom">
@@ -45,7 +54,7 @@ function query(props) {
                 {
                     trainsList.map((item, index) => {
                         return (
-                            <div key={index} styleName="tran_list">
+                            <div key={index} styleName="tran_list" onClick={() => JumpTicket(item)}>
                                 <div styleName="time_list">
                                     <span>{item.dTime}</span>
                                     <span styleName="end_time">{item.aTime}</span>
@@ -76,7 +85,7 @@ function query(props) {
                 }
             </div>
             <div styleName="query_footer">
-                <Footer/>
+                <Footer />
             </div>
         </div>
     )
