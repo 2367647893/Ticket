@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { connect } from 'dva';
-import Icons from '@/components/Icons'
-import './styles.less'
+import Icons from '@/components/Icons';
+import Nav from '@/components/Nav';
+import Footer from './components/Footer'
+import './styles.less';
 export default connect((state) => {
     return {
         trainsList: state.query.trains //车票数据
@@ -29,14 +31,14 @@ function query(props) {
                 <div styleName="head_top">
                     <div styleName="back_icon">
                         {/* icon图标 */}
-                        <Icons name={'icon-xiangzuo'} />
+                        <Icons name={'icon-xiangzuo_o'} />
                     </div>
+                    <div styleName="head_tit">
                     <span>{form}-{to}</span>
+                    </div>
                 </div>
                 <div styleName="head_bom">
-                    <div>前一天</div>
-                    <div>12</div>
-                    <div>后一天</div>
+                    <Nav />
                 </div>
             </div>
             <div styleName="query_section">
@@ -74,18 +76,7 @@ function query(props) {
                 }
             </div>
             <div styleName="query_footer">
-                <dl>
-                    <dt>1</dt>
-                    <dd>出发</dd>
-                </dl>
-                <dl>
-                    <dt>2</dt>
-                    <dd>只看高铁动车</dd>
-                </dl>
-                <dl>
-                    <dt>3</dt>
-                    <dd>只看有票</dd>
-                </dl>
+                <Footer/>
             </div>
         </div>
     )
