@@ -13,13 +13,15 @@ export default {
             console.log(payload);
          
             return {
-                
+                ...state,
+                ticketListDetail:payload
             }
         },
         setJumpTicketDetail(state,{payload}){
             console.log(payload);
             return{
-
+                ...state,
+                jumpTicketDetail:payload
             }
         }
     },
@@ -34,6 +36,7 @@ export default {
             })
         },
         *feactJumpTicketDetail({ payload }, { call, put, select }) {
+            console.log(payload);
             yield put({
                 type:'setJumpTicketDetail',
                 payload,

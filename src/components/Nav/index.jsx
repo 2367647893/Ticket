@@ -4,6 +4,7 @@ import './styles.less'
 export default function Nav() {
     //获取当前年月日星期几几点几分几秒并打印
     const [times] = useState(getTimer(new Date()))
+    // localStorage.setItem('time',times)
     function getTimer() {
         var date = new Date()
         var week = ['周日', '周一', '周二', '周三', '周四', ' 周五', '周六']
