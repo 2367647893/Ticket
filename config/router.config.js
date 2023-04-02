@@ -32,11 +32,19 @@ export default [
     ],
   },
 
-  // 车票页
+  // 车票详情
   {
     path: '/ticket',
     routes: [
       { path: '/ticket', component: './ticket', title: '车票详情' },
+    ],
+  },
+
+  // 订单填写
+  {
+    path: '/order',
+    routes: [
+      { path: '/order', component: './order', title: '订单填写' },
     ],
   },
   // 底部切换路由

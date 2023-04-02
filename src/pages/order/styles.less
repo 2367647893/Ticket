@@ -1,14 +1,15 @@
-.ticket_box {
-    width: 100vw;
-    height: 100vh;
+.order_box {
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
     display: flex;
     flex-direction: column;
-
-    .tic_head {
+    overflow: hidden;
+    .order_head {
         width: 100%;
-        height: 21vw;
+        height: 10.5vw;
 
-        .tic_head_top {
+        .order_head_top {
             width: 100%;
             height: 10.5vw;
             display: flex;
@@ -41,20 +42,15 @@
             }
 
         }
-
-        .tic_head_bot {
-            width: 100%;
-            height: 10.5vw;
-        }
     }
 
-    .tic_sec {
+    .order_sec {
         flex: 1;
-        background: #f5f5f5;
+        background-color: #f5f5f5;
         display: flex;
         flex-direction: column;
 
-        .tic_sec_one {
+        .order_sec_one {
             width: 100%;
             height: 120px;
             padding: 0 3.623188vw;
@@ -98,19 +94,12 @@
                     font-size: 3.140097vw;
                 }
 
-                span,
-                div {
+                span {
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     color: black;
-                }
-
-                span,
-                span {
-                    color: #1ba9ba;
-                    padding: 0 5px;
-                    font-size: 12px;
+                    font-size: 10.763285vw;
                 }
             }
 
@@ -137,51 +126,69 @@
                 }
             }
         }
+    }
 
-        .seat {
-            width: 100%;
-            height: auto;
+    .order_foot {
+        width: 100%;
+        height: 14vw;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+        .order_lef{
             display: flex;
             flex-direction: column;
-            border-top: 1px solid #eaeaea;
-            margin-top: 15px;
-
-            .li {
+            .lef_top{
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
-                width: 100%;
-                height: 10.144928vw;
-
-                .li_lef {
-                    width: 50%;
+                .top_lef{
+                    color: #ff8205;
+                }
+                .top_rig{
+                    color: #aaa;
+                }
+                div{
                     height: 100%;
                     display: flex;
                     align-items: center;
-                    justify-content: space-around;
-
-                    .lef_pic {
-                        color: #f90;
-                        font-size: 4.347826vw;
-                    }
                 }
-
-                .li_rig {
-                    width: 10%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    font-size: 2.898551vw;
-                    justify-content: space-around;
+                h2{
+                    color: #ff8205;
                 }
+            }
+            .lef_bom{
+                font-size: 2.415459vw;
+                color: #aaa;
             }
         }
     }
 
-}
-
-.tick_swic {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    .mask_order {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 14.492754vw;
+        background: rgba(3, 3, 3, 0.7);
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        .mask_box{
+            flex: 1;
+        }
+        .mask_div{
+            width: 100%;
+            height: 11vh;
+            z-index: 7;
+            position: fixed;
+            background: #fff;
+            left: 0;
+            right: 0;
+            bottom: 14.492754vw;
+            border: 1px solid #ccc ;
+            padding: 3.623188vw 3.623188vw 0 3.623188vw;
+            border: 0;
+        }
+    }
 }

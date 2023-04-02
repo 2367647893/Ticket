@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { connect } from 'dva';
+import { history } from 'umi';
+import { Button, Collapse } from 'antd-mobile'
 import Nav from '@/components/Nav'
 import Icons from '@/components/Icons'
 import './styles.less'
 export default connect((state) => {
-    // console.log(state);
     return {
         ticket: state.ticket.ticketListDetail,
         jump: state.ticket.jumpTicketDetail,
@@ -12,8 +13,6 @@ export default connect((state) => {
 })(ticket)
 function ticket(props) {
     const { dispatch, ticket, jump } = props
-    // console.log(jump);
-    console.log(ticket);
     const [time, setTime] = useState()
     useEffect(() => {
         dispatch({
@@ -22,6 +21,10 @@ function ticket(props) {
         })
         setTime(localStorage.getItem('time'))
     }, [])
+    // 跳转到订单填写
+    const jumpOrder = () => {
+        history.push('/order')
+    }
     return (
         <div styleName="ticket_box">
             <div styleName="tic_head">
@@ -65,9 +68,78 @@ function ticket(props) {
                         <h2>{jump.aTime}</h2>
                         <span>{time}</span>
                     </div>
-                </div>
+                </div>  
                 <div styleName="seat">
+                    <Collapse
+                        // 切换
+                        arrow={active => (active ?
 
+                            <Button
+                                color='warning'
+                                size='mini'
+                                fill='outline'
+                            >
+                                预订
+                            </Button> : <Button
+                                color='warning'
+                                size='mini'
+                                fill='outline'
+                            >
+                                收起
+                            </Button>)}
+                    >
+                        {/* 折叠面板渲染 */}
+                        {
+                            ticket.map((item, index) => {
+                                return (
+                                    <Collapse.Panel
+                                        key={index}
+                                        title=
+                                        <div styleName="li">
+                                            <div styleName="li_lef">
+                                                <span>
+                                                    {item.type}
+                                                </span>
+                                                <span styleName="lef_pic">
+                                                    ¥{item.priceMsg}
+                                                </span>
+                                            </div>
+                                            <div styleName="li_rig">
+                                                {item.ticketsLeft}
+                                            </div>
+                                        </div>
+                                    >
+                                        <div>
+                                            {
+                                                item.channels.map((v, i) => {
+                                                    return (
+                                                        <div
+                                                            key={i}
+                                                            styleName="tick_swic"
+                                                        >
+                                                            <div>
+                                                                <h5>{v.name}</h5>
+                                                                <span>{v.desc}</span>
+                                                            </div>
+                                                            <Button
+                                                                color='warning'
+                                                                size='mini'
+                                                                fill='outline'
+                                                                onClick={jumpOrder}
+                                                            >
+                                                                买票
+                                                            </Button>
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                        </div>
+                                    </Collapse.Panel>
+
+                                )
+                            })
+                        }
+                    </Collapse>
                 </div>
             </div>
         </div>

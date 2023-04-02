@@ -10,9 +10,7 @@ export default {
     },
     reducers: {
         setTicketList(state, { payload }) {
-            // console.log(payload);
             const {dataMap} = payload
-            console.log(dataMap.directTrainInfo.trains);
             return {
                 trains:dataMap.directTrainInfo.trains
             }
@@ -22,7 +20,6 @@ export default {
         // 车票数据
         *feactTicket({ payload }, { call, put, select }) {
             const res = yield call(api.getQueryList, payload)
-            console.log(res);
             if (res.code === 0) {
                 yield put({
                     type: 'setTicketList',

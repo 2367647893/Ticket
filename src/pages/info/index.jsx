@@ -7,7 +7,7 @@ export default connect((state) => {
         infoList: state.info.infoList
     }
 })(info)
-function info(props) {
+function info(props) { 
     const { dispatch, infoList } = props
     useEffect(() => {
         dispatch({
