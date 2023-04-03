@@ -71,16 +71,21 @@ function order(props) {
                         <span>{time}</span>
                     </div>
                 </div>
+                <div styleName="order_sec_two">
+                    <div styleName="two_lef">
+                        坐席
+                    </div>
+                    <div styleName="two_rig">
+                        二等座
+                        <div>¥</div>
+                        <h4>$100</h4>
+                    </div>
+                </div>
+                <div styleName="order_sec_three">
+                    <span>添加成人</span>
+                    <span>选择乘客</span>
+                </div>
             </div>
-            {/* <Popup
-                visible={visible1}
-                onMaskClick={() => {
-                    setVisible1(false)
-                }}
-                bodyStyle={{ height: '40vh' }}
-            >
-                1
-            </Popup> */}
             {
             visible1?
             <div styleName="mask_order">

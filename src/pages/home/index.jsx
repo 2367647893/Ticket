@@ -16,6 +16,7 @@ function home(props) {
     const [times, setTimes] = useState(getTimer(new Date()))
     const [leftCity, setLeftCity] = useState('天津')
     const [rightCity, setRightCity] = useState('北京')
+    const [switchBtn,setSwitchBtn] = useState(false)
     //获取当前年月日星期几几点几分几秒并打印
     function getTimer(v) {
         var date = v
@@ -66,6 +67,13 @@ function home(props) {
 
         history.push('/query')
     }
+    // switch切换
+    const switch_btn=()=>{
+        setSwitchBtn(v=>{
+            localStorage.setItem('switch',!v)
+            return !v
+        })
+    }
     return (
         <div styleName="HomeBox">
             <div styleName="HeadBox">
@@ -95,7 +103,7 @@ function home(props) {
                     </div>
                     <div styleName="switch_box">
                         <span>只看高铁/动车</span>
-                        <Switch />
+                        <Switch onChange={switch_btn} />
                     </div>
                     <div styleName="button_box">
                         <Button styleName="btn_sea" onClick={SeachBtn}>

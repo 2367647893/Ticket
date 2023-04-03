@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Icons from '@/components/Icons'
 import { connect } from 'dva'
 import './styles.less'
@@ -11,7 +11,7 @@ export default connect(state => {
 
 function Footer(props) {
     const { dispatch } = props
-    const [trains, setTrains] = useState(false)
+    const [trains, setTrains] = useState(localStorage.getItem('switch'))
     const [ticketx, setTicketx] = useState(false)
     const [text, setText] = useState(false)
     const [highSpeed, setHighSpeed] = useState(false)
@@ -64,7 +64,7 @@ function Footer(props) {
 
         // 筛选数据(高铁)
         setHighSpeed((v) => {
-            v = !v
+                v = !v
             dispatch({
                 type: "query/feactTicket",
                 // 解构tick赋值时间
@@ -77,7 +77,6 @@ function Footer(props) {
             })
             return v
         })
-        console.log(tick);
     }
     // 点击是否有票
     const tickets = () => {
