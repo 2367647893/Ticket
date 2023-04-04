@@ -25,3 +25,6 @@ export const getQueryList = payload => request.post(api.queryList, payload)
 
 // 车票详情
 export const getTicketList = payload => request.get(api.ticketList, payload)
+
+// 乘客列表
+export const getPassengersList = payload => request.post(api.passengersList, payload)

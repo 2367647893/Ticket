@@ -47,6 +47,14 @@ export default [
       { path: '/order', component: './order', title: '订单填写' },
     ],
   },
+
+  // 乘客列表
+  {
+    path: '/passengers',
+    routes: [
+      { path: '/passengers', component: './passengers', title: '乘客列表' },
+    ],
+  },
   // 底部切换路由
   {
     path: '/',

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from 'dva';
+import { history } from 'umi';
 import { Popup, Button } from 'antd-mobile'
 import Icons from '@/components/Icons'
 import './styles.less'
@@ -31,6 +32,10 @@ function order(props) {
         setVisible1(v=>{
             return !v
         })
+    }
+    const choose = () => {
+        history.push('/passengers')
+        localStorage.getItem('choose',1)
     }
     return (
         <div styleName="order_box">
@@ -83,7 +88,7 @@ function order(props) {
                 </div>
                 <div styleName="order_sec_three">
                     <span>添加成人</span>
-                    <span>选择乘客</span>
+                    <span onClick={choose}>选择乘客</span>
                 </div>
             </div>
             {

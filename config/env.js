@@ -2,7 +2,7 @@ import devServer from './proxy'
 import config from '../src/cfgs/common'
 
 const { ENV } = process.env
-
+  console.log(ENV);
 const publicPath = () => {
   if (ENV) {
     return ENV.includes('start') ? '/': config.publicPath[ENV]

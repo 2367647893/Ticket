@@ -9,7 +9,9 @@ export default connect((state)=>{
 function user(props){
 
     return(
-        <div>
+        <div styleName="user_box">
+            <div styleName="one"></div>
+            <div styleName="two"></div>
             user
         </div>
     )

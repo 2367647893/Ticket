@@ -11,7 +11,7 @@ export default {
     },
     reducers: {
         setUserInfo(state, { payload }) {
-            console.log(payload);
+            // console.log(payload);
             return {
                 ticketToken: payload.token,
                 userInfo: payload,
@@ -22,6 +22,7 @@ export default {
         // 登录
         *fetchLogin({ payload }, { call, put, select }) {
             const res = yield call(api.getLogin, payload)
+            console.log(res);
             if (res.data.code === 200) {
                 yield put({
                     type: 'setUserInfo',

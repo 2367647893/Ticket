@@ -22,4 +22,9 @@ export default {
 
   // 车票详情
   ticketList: '/api/rest/ticket',
+
+  // 乘客列表
+  passengersList:'api/rest/passengers',
+
+  
 }
