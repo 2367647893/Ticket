@@ -55,6 +55,14 @@ export default [
       { path: '/passengers', component: './passengers', title: '乘客列表' },
     ],
   },
+  // 新增乘客
+
+  {
+    path: '/passengerDetail',
+    routes: [
+      { path: '/passengerDetail', component: './passengerDetail', title: '新增乘客' },
+    ],
+  },
   // 底部切换路由
   {
     path: '/',

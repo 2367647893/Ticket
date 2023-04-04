@@ -9,6 +9,7 @@ export default connect((state) => {
     }
 })(PassengersButton)
 function PassengersButton(props) {
+    console.log(props);
     return (
         <Button >
             <div className="button_box">
