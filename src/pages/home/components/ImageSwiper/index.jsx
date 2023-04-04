@@ -4,10 +4,10 @@ import styles from './styles.less'
 
 // 图片数据
 const colors = [
-    'http://10.161.54.4:3000/src/pages/index/components/swipe/banner.png',
-    'http://10.161.54.4:3000/src/pages/index/components/swipe/banner.png',
-    'http://10.161.54.4:3000/src/pages/index/components/swipe/banner.png',
-    'http://10.161.54.4:3000/src/pages/index/components/swipe/banner.png'
+    'http://10.161.54.95:3000/src/pages/index/components/swipe/banner.png',
+    'http://10.161.54.95:3000/src/pages/index/components/swipe/banner.png',
+    'http://10.161.54.95:3000/src/pages/index/components/swipe/banner.png',
+    'http://10.161.54.95:3000/src/pages/index/components/swipe/banner.png'
 ]
 export default function ImageSwiper(props) {
     return (

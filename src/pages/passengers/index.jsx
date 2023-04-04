@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from 'dva';
 import Icons from '@/components/Icons';
 import UserName from '@/components/UserName';
@@ -11,6 +11,13 @@ export default connect((state) => {
     }
 })(passengers)
 function passengers(props) {
+    const {dispath} = props
+    useEffect(()=>{
+        dispath({
+            type:'',
+            payload:'',
+        })
+    },[])
 
     return (
         <div styleName="passengers_box">
@@ -27,6 +34,9 @@ function passengers(props) {
                 <UserName/>
                 <div styleName="sec_tit">
                     <PassengersButton icon={'icon-jiahao'} name={'新增乘客'} icon_style={{fontSize:'20px'}} />
+                </div>
+                <div>
+
                 </div>
             </div>
         </div>
