@@ -5,7 +5,6 @@ import './styles.less'
 export default function UserName() {
     const [username] = useState(JSON.parse(localStorage.getItem('userInfo')).username)
    useEffect(()=>{
-    console.log(username);
    },[])
     return (
         <div className="username_box">

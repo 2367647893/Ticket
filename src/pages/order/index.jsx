@@ -34,8 +34,8 @@ function order(props) {
         })
     }
     const choose = () => {
+        localStorage.setItem('choose',1)
         history.push('/passengers')
-        localStorage.getItem('choose',1)
     }
     return (
         <div styleName="order_box">

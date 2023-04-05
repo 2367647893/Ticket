@@ -1,27 +1,40 @@
 import api from '@/services';
 import { history } from 'umi';
 import { Toast } from 'antd-mobile'
-
 export default {
     namespace: 'home',
     state: {
-        PassengersList: []
+        travelList: []
 
     },
     reducers: {
-        setPassengersList(state, { payload }) {
-            console.log(payload);
+        setTravelList(state, { payload }) {
             return {
-                // PassengersList: payload,
+                travelList: payload,
             }
         }
     },
     effects: {
-        // 乘客列表数据
-        *feactPassengersList({ payload }, { call, put, select }) {
-            const res = yield call(api.getPassengersList, payload)
-            console.log(res);
+        // 主页出行快讯数据
+        *feactList({ payload }, { call, put, select }) {
+            const res = yield call(api.getTravelList, payload)
+            if (res.code === 0) {
+                yield put({
+                    type: 'setTravelList',
+                    payload: res.data
+                })
+            }
         },
-    
+        // 车票数据
+        *feactTicket({ payload }, { call, put, select }) {
+            const res = yield call(api.getQueryList, payload)
+            console.log(res);
+            // if (res.code === 0) {
+            //     yield put({
+            //         type: 'setTravelList',
+            //         payload: res.data
+            //     })
+            // }
+        },
     }
 }

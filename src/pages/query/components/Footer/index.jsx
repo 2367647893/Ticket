@@ -28,7 +28,6 @@ function Footer(props) {
             return !v
         })
         setTextTit((v) => {
-            // console.log(v);
             return v === '出发 早→晚' ? '耗时 长→短' : '出发 早→晚'
         })
         // 筛选时间

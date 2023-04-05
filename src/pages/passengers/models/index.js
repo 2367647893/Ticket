@@ -1,39 +1,30 @@
 import api from '@/services';
 
+
 export default {
-    namespace: 'home',
+    namespace: 'passengers',
     state: {
-        travelList: []
+        PassengersList: []
 
     },
     reducers: {
-        setTravelList(state, { payload }) {
+        setPassengersList(state, { payload }) {
             return {
-                travelList: payload,
+                PassengersList: payload,
             }
         }
     },
     effects: {
-        // 主页出行快讯数据
-        *feactList({ payload }, { call, put, select }) {
-            const res = yield call(api.getTravelList, payload)
-            if (res.code === 0) {
+        // 乘客列表数据
+        *feactPassengersList({ payload }, { call, put, select }) {
+            const res = yield call(api.getPassengersList, payload)
+            if(res.msg === 'success'){
                 yield put({
-                    type: 'setTravelList',
-                    payload: res.data
+                    type:'setPassengersList',
+                    payload:res.data
                 })
             }
         },
-        // 车票数据
-        *feactTicket({ payload }, { call, put, select }) {
-            const res = yield call(api.getQueryList, payload)
-            console.log(res);
-            // if (res.code === 0) {
-            //     yield put({
-            //         type: 'setTravelList',
-            //         payload: res.data
-            //     })
-            // }
-        },
+    
     }
 }
