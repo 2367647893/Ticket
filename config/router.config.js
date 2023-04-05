@@ -55,14 +55,31 @@ export default [
       { path: '/passengers', component: './passengers', title: '乘客列表' },
     ],
   },
-  // 新增乘客
 
+  // 新增乘客
   {
     path: '/passengerDetail',
     routes: [
       { path: '/passengerDetail', component: './passengerDetail', title: '新增乘客' },
     ],
   },
+
+  // 订单详情
+  {
+    path: '/orderDetail',
+    routes: [
+      { path: '/orderDetail', component: './orderDetail', title: '订单详情' },
+    ],
+  },
+
+  // 设置
+  {
+    path: '/setting',
+    routes: [
+      { path: '/setting', component: './setting', title: '设置' },
+    ],
+  },
+
   // 底部切换路由
   {
     path: '/',

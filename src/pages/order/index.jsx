@@ -5,37 +5,56 @@ import { Popup, Button } from 'antd-mobile'
 import Icons from '@/components/Icons'
 import './styles.less'
 export default connect((state) => {
+    console.log(state);
     return {
         jump: state.ticket.jumpTicketDetail,
+        checklist: state.passengers.checkList,
     }
 })(order)
 function order(props) {
-    const { dispatch, jump } = props
+    const { dispatch, jump, checklist } = props
     const [time, setTime] = useState()
     const [visible1, setVisible1] = useState(false)
     const [yin, setYin] = useState(false)
+
+    const addTic = async() => {
+      await checklist.push({
+            booker: "",
+            bookerId: "",
+            cardType: "",
+            checked: false,
+            idCard: "",
+            phoneNumber: "",
+            ticketType: ""
+        })
+        console.log(123);
+        
+    }
     useEffect(() => {
         setTime(localStorage.getItem('time'))
     }, [])
-    const yinBtn=()=>{
-        setYin(v=>{
+    const yinBtn = () => {
+        setYin(v => {
             return !v
         })
-        setVisible1(v=>{
+        setVisible1(v => {
             return !v
         })
     }
-    const  maskSwitch=()=>{
-        setYin(v=>{
+    const maskSwitch = () => {
+        setYin(v => {
             return !v
         })
-        setVisible1(v=>{
+        setVisible1(v => {
             return !v
         })
     }
     const choose = () => {
-        localStorage.setItem('choose',1)
+        localStorage.setItem('choose', 1)
         history.push('/passengers')
+    }
+    const submitBtn = () => {
+        console.log(1);
     }
     return (
         <div styleName="order_box">
@@ -86,41 +105,73 @@ function order(props) {
                         <h4>$100</h4>
                     </div>
                 </div>
+                {
+                    checklist.length === 0 ? null :
+                        <div styleName="check_div">
+                            {
+                                checklist.map((item, index) => {
+                                    console.log(item);
+                                    return (
+                                        <div key={index} styleName="check_box">
+                                            <div styleName="check_lef">
+                                                {/* icon图标 */}
+                                                <Icons name={'icon-jian'} />
+                                            </div>
+                                            <div styleName="check_rig">
+                                                <div styleName="rig_top">
+                                                    <div styleName="top_lef">姓名</div>
+                                                    <div styleName="top_rig">
+                                                        <span>{item.booker}</span>
+                                                        <span>{item.ticketType}</span>
+                                                    </div>
+                                                </div>
+                                                <div styleName="rig_bom">
+                                                    <div styleName="bom_lef">身份证</div>
+                                                    <div styleName="bom_rig">{item.idCard}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                }
                 <div styleName="order_sec_three">
-                    <span>添加成人</span>
+                    <span onClick={addTic}>添加成人</span>
                     <span onClick={choose}>选择乘客</span>
                 </div>
             </div>
             {
-            visible1?
-            <div styleName="mask_order">
-                <div styleName="mask_box" onClick={maskSwitch}></div>
-                <div styleName="mask_div">1</div>
-            </div>
-            :
-            null
-        }
+                visible1 ?
+                    <div styleName="mask_order">
+                        <div styleName="mask_box" onClick={maskSwitch}></div>
+                        <div styleName="mask_div">1</div>
+                    </div>
+                    :
+                    null
+            }
             <div styleName="order_foot">
                 <div styleName="order_lef">
                     <div styleName="lef_top">
                         <div styleName="top_lef">
-                        <div>¥</div>
-                        <h2>200</h2>
+                            <div>¥</div>
+                            <h2>200</h2>
                         </div>
-                       <span onClick={yinBtn}  styleName="top_rig">
-                       {
-                            yin ?
-                                <Icons name={'icon-xiangshang'} />
-                                :
-                                <Icons name={'icon-xiangxia'} />
-                        }
-                       </span>
+                        <span onClick={yinBtn} styleName="top_rig">
+                            {
+                                yin ?
+                                    <Icons name={'icon-xiangshang'} />
+                                    :
+                                    <Icons name={'icon-xiangxia'} />
+                            }
+                        </span>
                     </div>
                     <span styleName="lef_bom">支付金额</span>
                 </div>
                 <div>
                     <Button
-                    style={{background:'#1ba9ba',color:'#fff'}}
+                        style={{ background: '#1ba9ba', color: '#fff' }}
+                        onClick={submitBtn}
                     >
                         提交订单
                     </Button>

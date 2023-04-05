@@ -4,15 +4,23 @@ import api from '@/services';
 export default {
     namespace: 'passengers',
     state: {
-        PassengersList: []
-
+        PassengersList: [],
+        checkList:[]
     },
     reducers: {
         setPassengersList(state, { payload }) {
             return {
+                ...state,
                 PassengersList: payload,
             }
-        }
+        },
+        setCheckList(state, { payload }) {
+            console.log(payload);
+            return {
+                ...state,
+                checkList: payload,
+            }
+        },
     },
     effects: {
         // 乘客列表数据
@@ -24,6 +32,13 @@ export default {
                     payload:res.data
                 })
             }
+        },
+        *feactCheck({ payload }, { call, put, select }) {
+            console.log(payload);
+            yield put({
+                type:'setCheckList',
+                payload
+            })
         },
     
     }
