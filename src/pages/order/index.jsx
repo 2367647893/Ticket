@@ -30,6 +30,7 @@ function order(props) {
         console.log(123);
         
     }
+
     useEffect(() => {
         setTime(localStorage.getItem('time'))
     }, [])
@@ -56,12 +57,16 @@ function order(props) {
     const submitBtn = () => {
         console.log(1);
     }
+    // 返回上一页
+    const  back = () => {
+        history.go(-1)
+    }
     return (
         <div styleName="order_box">
             <div styleName="order_head">
                 <div styleName="order_head_top">
 
-                    <span styleName="head_icon">
+                    <span styleName="head_icon" onClick={back}>
                         {/* icon图标 */}
                         <Icons name={'icon-xiangzuo_o'} />
                     </span>

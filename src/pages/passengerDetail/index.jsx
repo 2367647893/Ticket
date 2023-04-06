@@ -12,10 +12,14 @@ export default connect((state) => {
 })(passengerDetail)
 function passengerDetail(props) {
     console.log(props);
+    // 返回上一页
+    const  back = () => {
+        history.go(-1)
+    }
     return (
         <div styleName="passengers_box">
         <div styleName="passengers_head">
-            <div styleName="head_lef">
+            <div styleName="head_lef" onClick={back}>
                 {/* icon图标 */}
                 <Icons name={'icon-xiangzuo_o'}  style={{fontSize:'20px',fontWeight:'bold'}}/>
             </div>

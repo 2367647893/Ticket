@@ -25,12 +25,16 @@ function ticket(props) {
     const jumpOrder = () => {
         history.push('/order')
     }
+    // 返回上一页
+    const  back = () => {
+        history.go(-1)
+    }
     return (
         <div styleName="ticket_box">
             <div styleName="tic_head">
                 <div styleName="tic_head_top">
 
-                    <span styleName="head_icon">
+                    <span styleName="head_icon" onClick={back}>
                         {/* icon图标 */}
                         <Icons name={'icon-xiangzuo_o'} />
                     </span>

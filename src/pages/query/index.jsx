@@ -34,11 +34,15 @@ function query(props) {
             payload: item
         })
     })
+    // 返回上一页
+    const  back = () => {
+        history.go(-1)
+    }
     return (
         <div styleName="query_box">
             <div styleName="query_head">
                 <div styleName="head_top">
-                    <div styleName="back_icon">
+                    <div styleName="back_icon" onClick={back}>
                         {/* icon图标 */}
                         <Icons name={'icon-xiangzuo_o'} />
                     </div>
