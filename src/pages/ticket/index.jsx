@@ -26,7 +26,7 @@ function ticket(props) {
         history.push('/order')
     }
     // 返回上一页
-    const  back = () => {
+    const back = () => {
         history.go(-1)
     }
     return (
@@ -72,7 +72,7 @@ function ticket(props) {
                         <h2>{jump.aTime}</h2>
                         <span>{time}</span>
                     </div>
-                </div>  
+                </div>
                 <div styleName="seat">
                     <Collapse
                         // 切换

@@ -9,6 +9,7 @@ export default {
     },
     reducers: {
         setInfoList(state, { payload }) {
+            
             return {
                 infoList: payload,
             }
@@ -17,6 +18,7 @@ export default {
     effects: {
         // 全部资讯数据
         *feactInfoList({ payload }, { call, put, select }) {
+
             const res = yield call(api.getTravelList, payload)
             if (res.code === 0) {
                 yield put({

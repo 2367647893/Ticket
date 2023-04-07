@@ -32,3 +32,16 @@ export const dva = {
     }
   },
 }
+
+
+
+// const add =(a)=>{
+//   return (b)=>{
+//     return (c)=>{
+//       console.log(a+b+c);
+//     }
+//   }
+// }
+// add(8)(2)(3)
+
+

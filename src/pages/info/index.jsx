@@ -12,6 +12,7 @@ function info(props) {
     useEffect(() => {
         dispatch({
             type: "info/feactInfoList",
+            payload:{}
         })
     }, [])
     return (

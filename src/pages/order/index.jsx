@@ -1,34 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { connect } from 'dva';
 import { history } from 'umi';
-import { Popup, Button } from 'antd-mobile'
+import { Popup, Button,Input} from 'antd-mobile'
 import Icons from '@/components/Icons'
+import CheckList from "./components/CheckList";
 import './styles.less'
 export default connect((state) => {
-    console.log(state);
     return {
         jump: state.ticket.jumpTicketDetail,
         checklist: state.passengers.checkList,
     }
 })(order)
 function order(props) {
-    const { dispatch, jump, checklist } = props
+    const { dispatch, jump,checklist } = props
     const [time, setTime] = useState()
     const [visible1, setVisible1] = useState(false)
     const [yin, setYin] = useState(false)
-
-    const addTic = async() => {
-      await checklist.push({
-            booker: "",
-            bookerId: "",
-            cardType: "",
-            checked: false,
-            idCard: "",
-            phoneNumber: "",
-            ticketType: ""
-        })
+    // checklist.push({
+    //     booker: "",
+    //     bookerId: "",
+    //     cardType: "",
+    //     checked: false,
+    //     idCard: "",
+    //     phoneNumber: "",
+    //     ticketType: ""
+    // })
+    // console.log(checklist);
+    const addTic =  async () => {
+        console.log(checklist);
         console.log(123);
-        
+        await dispatch({
+            type:'passengers/feactCheck',
+            payload:checklist
+        })
+        console.log(321);
+        console.log(checklist);
     }
 
     useEffect(() => {
@@ -58,7 +64,7 @@ function order(props) {
         console.log(1);
     }
     // 返回上一页
-    const  back = () => {
+    const back = () => {
         history.go(-1)
     }
     return (
@@ -110,37 +116,7 @@ function order(props) {
                         <h4>$100</h4>
                     </div>
                 </div>
-                {
-                    checklist.length === 0 ? null :
-                        <div styleName="check_div">
-                            {
-                                checklist.map((item, index) => {
-                                    console.log(item);
-                                    return (
-                                        <div key={index} styleName="check_box">
-                                            <div styleName="check_lef">
-                                                {/* icon图标 */}
-                                                <Icons name={'icon-jian'} />
-                                            </div>
-                                            <div styleName="check_rig">
-                                                <div styleName="rig_top">
-                                                    <div styleName="top_lef">姓名</div>
-                                                    <div styleName="top_rig">
-                                                        <span>{item.booker}</span>
-                                                        <span>{item.ticketType}</span>
-                                                    </div>
-                                                </div>
-                                                <div styleName="rig_bom">
-                                                    <div styleName="bom_lef">身份证</div>
-                                                    <div styleName="bom_rig">{item.idCard}</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )
-                                })
-                            }
-                        </div>
-                }
+                <CheckList add={addTic()} />
                 <div styleName="order_sec_three">
                     <span onClick={addTic}>添加成人</span>
                     <span onClick={choose}>选择乘客</span>

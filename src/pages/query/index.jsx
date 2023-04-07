@@ -25,7 +25,6 @@ function query(props) {
             payload: tick
         })
     }, [])
-
     // 点击跳转到车票详情
     const JumpTicket = ((item) => {
         history.push('/ticket')

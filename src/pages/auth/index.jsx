@@ -10,6 +10,7 @@ export default connect(()=>{
 
 function Auth(props){
     if (localStorage.getItem('ticketToken')) {
+        console.log(localStorage.getItem('ticketToken'));
         return props.children
     }else{
         return <Redirect to='/login' />
