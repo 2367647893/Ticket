@@ -4,6 +4,7 @@ import ImageSwiper from "./components/ImageSwiper";
 import { Image, Button, Switch, Popup, Calendar } from 'antd-mobile'
 import { history } from 'umi'
 import Icons from '@/components/Icons'
+import Guard from '@/components/Guard'
 import './styles.less'
 export default connect((state) => {
     return {
@@ -17,6 +18,7 @@ function home(props) {
     const [leftCity, setLeftCity] = useState('天津')
     const [rightCity, setRightCity] = useState('北京')
     const [switchBtn,setSwitchBtn] = useState(false)
+    const [guard,setGuard] = useState(false)
     //获取当前年月日星期几几点几分几秒并打印
     function getTimer(v) {
         var date = v
@@ -52,7 +54,8 @@ function home(props) {
     })
     // 搜索车票
     const SeachBtn = () => {
-        localStorage.setItem('ticket_tit',
+        if(localStorage.getItem('ticketToken')){
+            localStorage.setItem('ticket_tit',
             JSON.stringify(
                 {
                     date: new Date().getTime(),
@@ -64,8 +67,14 @@ function home(props) {
                 }
             )
         )
-
         history.push('/query')
+        }else{
+            setGuard(true)
+            localStorage.setItem('swi',true)
+        }
+        
+
+        
     }
     // switch切换
     const switch_btn=()=>{
@@ -76,6 +85,12 @@ function home(props) {
     }
     return (
         <div styleName="HomeBox">
+            {
+                guard?
+                <Guard switchBtn={guard} />
+                :
+                null
+            }
             <div styleName="HeadBox">
                 {/* 头部布局 */}
                 <div styleName="head_title">

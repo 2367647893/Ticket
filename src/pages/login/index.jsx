@@ -3,6 +3,7 @@ import { Form, Input, Button } from 'antd-mobile'
 import { connect } from 'dva';
 import { history } from 'umi'
 import DynamicBackground from '@/components/DynamicBackground'
+import Icons from '@/components/Icons'
 import './styles.less'
 export default connect((state) => {
     console.log(state);
@@ -28,14 +29,18 @@ function login(props) {
         localStorage.setItem("password", val.password)
 
     }
-   
+    // 返回上一页
+    const back = () => {
+        history.go(-1)
+    }
     return (
         <div styleName="login_div">
             <div styleName="LoginBox">
             
             <div styleName="HeadBox">
-                <span styleName="headLeft">
-                    {"<"}
+                <span styleName="headLeft" onClick={back}>
+                    {/* icon图标 */}
+                    <Icons name={'icon-xiangzuo_o'} />
                 </span>
                 <span styleName="headSection">登录</span>
                 <span styleName="headRight"></span>

@@ -82,7 +82,7 @@ export default [
    // 设置
    {
     path: '/servicess',
-    wrappers: ['./auth'],//路由守卫
+    // wrappers: ['./auth'],//路由守卫
     routes: [
       { path: '/servicess', component: './servicess', title: '客服' },
     ],
@@ -93,7 +93,7 @@ export default [
   {
     path: '/',
     component: '@/layouts/BasicLayout',//布局组件
-    wrappers: ['./auth'],//路由守卫
+    // wrappers: ['./auth'],//路由守卫
     routes: [
       { path: '/', component: './home', title: '首页' },
       { path: '/user', component: './user', title: '我的' },
