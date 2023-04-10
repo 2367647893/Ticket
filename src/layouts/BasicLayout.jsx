@@ -42,7 +42,7 @@ export default function BasicLayout(props) {
     {
       key: '/user',
       title: '我的',
-      icon: <UserOutline />,
+      icon: <UserOutline />,  
     },
   ]
   return (

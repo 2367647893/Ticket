@@ -26,5 +26,6 @@ export default {
   // 乘客列表
   passengersList:'api/rest/passengers',
 
-  
+  // 订单列表
+  orderList:'/api/rest/orderList',
 }
