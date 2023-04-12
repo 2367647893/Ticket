@@ -1,44 +1,53 @@
-.order_box{
+.order_box {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     background-color: #f5f5f5;
-    .order_head{
+
+    .order_head {
         width: 100%;
         height: 25.628019vw;
         display: flex;
         flex-direction: column;
+        background-color: #fff;
+
     }
-    .order_sec{
+
+    .order_sec {
         flex: 1;
         overflow: auto;
     }
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
 }
-:global(.adm-card){
+
+:global(.adm-card) {
     margin: 10px;
     background-color: #fff;
     margin-top: 10px;
     height: 30vw;
-    :global(.adm-card-body){
+
+    :global(.adm-card-body) {
         width: 100%;
         height: 100%;
-        .card_box{
+
+        .card_box {
             width: 100%;
             height: 100%;
             display: flex;
             flex-direction: column;
-            .card_one{
+
+            .card_one {
                 width: 100%;
                 height: 25%;
                 display: flex;
                 align-items: center;
-                justify-content: space-between ;
-                .one_lef{
+                justify-content: space-between;
+
+                .one_lef {
                     width: 50%;
                     height: 100%;
                     font-size: 3.623188vw;
@@ -46,7 +55,8 @@
                     font-weight: bold;
                     color: #333333
                 }
-                .one_rig{
+
+                .one_rig {
                     width: auto;
                     height: 100%;
                     display: flex;
@@ -58,7 +68,8 @@
                     color: #ff8300;
                 }
             }
-            .card_two{
+
+            .card_two {
                 width: 100%;
                 height: 25%;
                 display: flex;
@@ -67,7 +78,8 @@
                 font-size: 2.898551vw;
                 color: #666666;
             }
-            .card_three{
+
+            .card_three {
                 width: 100%;
                 height: 25%;
                 display: flex;
@@ -76,13 +88,15 @@
                 font-size: 2.898551vw;
                 color: #666666;
             }
-            .card_four{
+
+            .card_four {
                 width: 100%;
                 height: 25%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                :global(.adm-button){
+
+                :global(.adm-button) {
                     width: 80px;
                     height: 25px;
                     display: flex;
@@ -91,10 +105,20 @@
                     border-radius: 15px;
                     border: 1px solid #ccc;
                     font-size: 2.898551vw;
-                color: #666666;
+                    color: #666666;
                 }
             }
         }
     }
-    
+
+}
+
+:global(.adm-jumbo-tabs-tab-title) {
+    font-size: 3.623188vw;
+}
+
+:global(.adm-jumbo-tabs-tab-active) {
+    font-size: 3.623188vw;
+    color: #1ba9ba;
+    font-weight: bold;
 }
