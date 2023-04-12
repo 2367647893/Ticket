@@ -79,8 +79,17 @@ export default [
       { path: '/setting', component: './setting', title: '设置' },
     ],
   },
-   // 设置
-   {
+
+  // 修改密码
+  {
+    path: '/confirmpwd',
+    routes: [
+      { path: '/confirmpwd', component: './confirmpwd', title: '修改密码' },
+    ],
+  },
+
+  // 客服
+  {
     path: '/servicess',
     // wrappers: ['./auth'],//路由守卫
     routes: [
@@ -88,7 +97,6 @@ export default [
     ],
   },
 
-  
   // 底部切换路由
   {
     path: '/',
@@ -97,7 +105,6 @@ export default [
     routes: [
       { path: '/', component: './home', title: '首页' },
       { path: '/user', component: './user', title: '我的' },
-      // { path: '/services', component: './servicess', title: '客服' },
       { path: '/orderList', component: './orderList', title: '订单' },
     ],
   },

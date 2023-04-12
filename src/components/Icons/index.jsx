@@ -4,7 +4,7 @@ import './styles.less'
 
 export default function Icons(props) {
     const IconFont = createFromIconfontCN({
-        scriptUrl: '//at.alicdn.com/t/c/font_3986964_1gy1lyxbi8d.js',
+        scriptUrl: '//at.alicdn.com/t/c/font_3986964_yhesd8lh1b.js',
     });
     return (
         <div>
